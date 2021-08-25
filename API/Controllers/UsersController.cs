@@ -32,7 +32,6 @@ namespace API.Controllers
 
         //get all user
         //api/users
-        [Authorize(Roles ="Admin")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers([FromQuery]UserParams userParams)
         {
@@ -54,7 +53,6 @@ namespace API.Controllers
         // get a specific user
         //api/users/id
         [Authorize(Roles ="Member")]
-        [HttpGet("{username}", Name = "GetUser")]
         public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
             return await _userRepository.GetMemberAsync(username);
