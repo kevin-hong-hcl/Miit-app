@@ -59,7 +59,7 @@ export class MembersService {
       return response;
     }));
   }  
-  getMember(username)
+  getMember(username: string)
   {
     const member = [...this.memberCache.values()]
     .reduce((arr, elem) => arr.concat(elem.result), [])
