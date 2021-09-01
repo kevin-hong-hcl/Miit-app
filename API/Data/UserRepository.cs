@@ -43,12 +43,8 @@ namespace API.Data
             var query = _context.Users.AsQueryable();
 
             query = query.Where(user => user.UserName != userParams.CurrentUsername);
-            query = query.Where(user => user.Gender == userParams.Gender);
 
-            var minDob = DateTime.Today.AddYears(-userParams.MaxAge -1);
-            var maxDob = DateTime.Today.AddYears(-userParams.MinAge);
-
-            query = query.Where(user => user.DateOfBirth >= minDob && user.DateOfBirth <= maxDob);
+            query = query.Where(user => user.UserName != "admin");
 
             query = userParams.OrderBy switch
             {
