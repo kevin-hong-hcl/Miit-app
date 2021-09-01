@@ -4,7 +4,7 @@
         <p class="=lead"> Come to have a chat... all you need to do is sign up!</p>
         <div class="text-center">
             <button (click)="registerToggle()" class="btn btn-primary btn-lg mr-2"> Register </button>
-            <button class="btn btn-primary btn-lg "> Learn More </button>
+            <button (click)="aboutPage()" class="btn btn-primary btn-lg "> Learn More </button>
         </div>
     </div>
     <div *ngIf="registerMode" class="container"> 

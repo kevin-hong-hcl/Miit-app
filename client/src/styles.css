@@ -1,12 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 .tab-panel {
-    border: 1px solid #ddd;
+    border: 1px solid rgb(221, 221, 221);
     padding: 10px;
     border-radius: 4px;
   }
   
   .nav-tabs > li.open, .member-tabset > .nav-tabs > li:hover {
-    border-bottom: 4px solid #fbcdcf;
+    border-bottom: 4px solid #bdddf7;
   }
   
   .member-tabset > .nav-tabs > li.open > a, .member-tabset > .nav-tabs > li:hover > a {
@@ -24,7 +24,7 @@
   }
   
   .member-tabset > .nav-tabs > li.active {
-    border-bottom: 4px solid #E95420;
+    border-bottom: 4px solid #209fe9;
     position: relative;
   }
   
@@ -41,6 +41,6 @@
     margin-top: -3px;
     background-color: #fff;
     border: 0;
-    border-top: 1px solid #eee;
+    border-top: 1px solid rgb(238, 238, 238);
     padding: 15px 0;
   }
