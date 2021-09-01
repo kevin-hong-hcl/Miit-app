@@ -73,11 +73,6 @@ export class MemberDetailComponent implements OnInit, OnDestroy {
   }
 
   selectTab(tabId: number) {
-    this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams: { tab: tabId }
-    });
-
     this.memberTabs.tabs[tabId].active = true;
   }
 
