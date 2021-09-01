@@ -73,10 +73,20 @@ export class MemberDetailComponent implements OnInit, OnDestroy {
   }
 
   selectTab(tabId: number) {
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { tab: tabId }
+    });
+
     this.memberTabs.tabs[tabId].active = true;
   }
 
-  onTabActivated(data: TabDirective) {
+  onTabActivated(data: TabDirective, tabId: number) {
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { tab: tabId }
+    });
+    
     this.activeTab = data;
     if(this.activeTab.heading === 'Messages' && this.messages.length === 0) {
       this.messageService.createHubConnection(this.user, this.member.username);
