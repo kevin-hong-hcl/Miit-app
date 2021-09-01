@@ -14,7 +14,6 @@ import { Photo } from "./photo";
         interests: string;
         city: string;
         country: string;
-        githubLink: string;
         photos: Photo[];
     }
 
