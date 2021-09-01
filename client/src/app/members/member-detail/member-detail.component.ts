@@ -99,5 +99,9 @@ export class MemberDetailComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.messageService.stopHubConnection();
   }
-
+  /*
+  openGithub(): {
+    window.open(member.githubLink, "_blank");
+  }
+  */
 }
