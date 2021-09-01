@@ -34,6 +34,7 @@ import { PhotoManagementComponent } from './admin/photo-management/photo-managem
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 import { ConfirmDialogComponent } from './modals/confirm-dialog/confirm-dialog.component';
 import { LogosvgComponent } from './logosvg/logosvg.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { LogosvgComponent } from './logosvg/logosvg.component';
     RolesModalComponent,
     ConfirmDialogComponent,
     LogosvgComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
