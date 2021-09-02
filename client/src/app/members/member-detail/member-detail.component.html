@@ -23,6 +23,10 @@
                     <strong>Member since:</strong>
                     <p>{{member.created | date: 'longDate'}}</p>
                 </div>
+                <div *ngIf="member.githubLink != null">
+                    <strong>Github Link: </strong>
+                    <a target="_blank" rel="noopener noreferrer" href="{{member.githubLink}}">Open to Github</a>
+                </div>
             </div>
             <div class="card-footer">
                 <div class="btn-group d-flex">
@@ -34,21 +38,21 @@
     </div>
     <div class="col-8">
         <tabset class="member-tabset" #memberTabs>
-            <tab heading="About {{member.knownAs}}" (selectTab)="onTabActivated($event)">
-                <h4>Description</h4>
+            <tab heading="About {{member.knownAs}}" (selectTab)="onTabActivated($event, 0)">
+                <h4>Current Projects</h4>
                 <p>{{member.introduction}}</p>
-                <h4>Looking for</h4>
+                <h4>Future Project Ideas</h4>
                 <p>{{member.lookingFor}}</p>
             </tab>
-            <tab heading="Interests" (selectTab)="onTabActivated($event)">
+            <tab heading="Interests" (selectTab)="onTabActivated($event, 1)">
                 <h4>Interests</h4>
                 <p>{{member.interests}}</p>
             </tab>
-            <tab heading="Photos" (selectTab)="onTabActivated($event)">
+            <tab heading="Photos" (selectTab)="onTabActivated($event, 2)">
                 <ngx-gallery [options]="galleryOptions" [images]="galleryImages" style="display: inline-block; margin-bottom: 20px;"></ngx-gallery>
                 <p>Photos will go here</p>
             </tab>
-            <tab heading="Messages" (selectTab)="onTabActivated($event)">
+            <tab heading="Messages" (selectTab)="onTabActivated($event, 3)">
                 <app-member-messages [username]="member.username"></app-member-messages>
             </tab>
         </tabset>
