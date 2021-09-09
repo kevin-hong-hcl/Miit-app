@@ -6,7 +6,7 @@ name: Angular NG Build
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   pull_request:
-    branches: [ deploy ]
+    branches: [ testDeploy ]
     paths:
       - './client'
 
