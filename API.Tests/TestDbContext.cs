@@ -16,5 +16,7 @@ namespace API.Tests
         }
         public new virtual DbSet<AppUser> Users { get; set; }
         public new virtual DbSet<Photo> Photos { get; set; }
+
+
     }
 }
