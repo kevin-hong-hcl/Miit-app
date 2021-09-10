@@ -30,12 +30,14 @@ namespace API.Data
                 .HasMany(ur => ur.UserRoles)
                 .WithOne(u => u.User)
                 .HasForeignKey(ur => ur.UserId)
+                .OnDelete(DeleteBehavior.Cascade)
                 .IsRequired();
 
             builder.Entity<AppRole>()
                 .HasMany(ur => ur.UserRoles)
                 .WithOne(u => u.Role)
                 .HasForeignKey(ur => ur.RoleId)
+                .OnDelete(DeleteBehavior.Cascade)
                 .IsRequired();
 
             builder.Entity<UserLike>()
