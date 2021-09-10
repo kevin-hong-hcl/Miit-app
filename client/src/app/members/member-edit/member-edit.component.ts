@@ -6,6 +6,7 @@ import { MembersService } from 'src/app/_services/members.service';
 import { take } from 'rxjs/operators'
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-member-edit',
@@ -22,7 +23,8 @@ export class MemberEditComponent implements OnInit {
     }
   }
 
-  constructor(private accountService: AccountService, private memberService: MembersService, private toastr: ToastrService) { 
+  constructor(private accountService: AccountService, private memberService: MembersService, private toastr: ToastrService,
+    private router: Router) { 
     this.accountService.currentUser$.pipe(take(1)).subscribe(user => this.user = user);
   }
 
@@ -40,6 +42,14 @@ export class MemberEditComponent implements OnInit {
     this.memberService.updateMember(this.member).subscribe(() => {
       this.toastr.success("Profile Updated Sucessfully");
       this.editForm.reset(this.member);
+    });
+  }
+
+  deleteAccount(){
+    this.accountService.logout();
+    this.router.navigateByUrl('/');
+    this.accountService.deleteUser(this.member.username).subscribe(() => {
+      this.toastr.success("Account deleted")
     });
   }
 }
