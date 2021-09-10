@@ -11,5 +11,10 @@
                 <app-photo-management></app-photo-management>
             </div>
         </tab>
+        <tab heading='Delete Accounts' *appHasRole='["Admin"]'>
+            <div class="container">
+                <app-delete-user></app-delete-user>
+            </div>
+        </tab>
     </tabset>
 </div>

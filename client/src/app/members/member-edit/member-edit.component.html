@@ -66,6 +66,14 @@
             <tab heading="Edit Photos">
                 <app-photo-editor [member]="member"></app-photo-editor>
             </tab>
+            <tab heading="Account Settings">
+                <div class="container">
+                    <!--Change Password goes here-->
+                </div>
+                <div class="container">
+                    <button (click)="deleteAccount()" class="btn btn-danger">Delete Account!</button>
+                </div>
+            </tab>
         </tabset>
     </div>
 </div>

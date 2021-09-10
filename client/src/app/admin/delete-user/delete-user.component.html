@@ -1,0 +1,12 @@
+<div class="row">
+    <table class="table">
+        <tr>
+            <th style="width: 60%;">Username</th>
+            <th style="width: 40%;"></th>
+        </tr>
+        <tr *ngFor="let user of users">
+            <td>{{user.username}}</td>
+            <td><button (click)="deleteUser(user)" class="btn btn-danger">Delete User!</button></td>
+        </tr>
+    </table>
+</div>

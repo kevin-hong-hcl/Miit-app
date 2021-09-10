@@ -19,7 +19,10 @@ namespace API.Helpers
 
             var uow = resultContext.HttpContext.RequestServices.GetService<IUnitOfWork>();
             var user = await uow.UserRepository.GetUserByIdAsync(userId);
-            user.LastActive = DateTime.UtcNow;
+            if(user != null)
+            {
+                user.LastActive = DateTime.UtcNow;
+            }
             await uow.Complete();
         }
     }

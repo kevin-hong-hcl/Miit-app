@@ -35,6 +35,7 @@ import { RolesModalComponent } from './modals/roles-modal/roles-modal.component'
 import { ConfirmDialogComponent } from './modals/confirm-dialog/confirm-dialog.component';
 import { LogosvgComponent } from './logosvg/logosvg.component';
 import { AboutComponent } from './about/about.component';
+import { DeleteUserComponent } from './admin/delete-user/delete-user.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { AboutComponent } from './about/about.component';
     ConfirmDialogComponent,
     LogosvgComponent,
     AboutComponent,
+    DeleteUserComponent,
   ],
   imports: [
     BrowserModule,

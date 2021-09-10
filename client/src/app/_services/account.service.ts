@@ -39,6 +39,10 @@ export class AccountService {
     )
   }
 
+  deleteUser(username: string){
+    return this.http.delete(this.baseUrl + 'account/delete-user/' + username, {responseType: 'text'});
+  }
+
   setCurrentUser(user: User)
   {
     user.roles = [];
